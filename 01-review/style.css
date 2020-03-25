@@ -39,7 +39,7 @@
 } */
 
 /* Part 3 */
-.wrapper {
+/* .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1em;
@@ -52,6 +52,27 @@
 }
 .c {
   grid-column: 1/4;
+} */
+
+/* Part 4 */
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    'a a b'
+    'c c c'
+    'd e f'
+    'g h h';
+  gap: 1em;
+}
+.a {
+  grid-area: a;
+}
+.h {
+  grid-area: h;
+}
+.c {
+  grid-area: c;
 }
 
 /* HINT: Three types of Grid syntax might include:
