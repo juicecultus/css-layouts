@@ -1,4 +1,5 @@
 /* scroll for starting CSS and hints; instructions in JS window -> */
+/* Part 1
 .wrapper {
   display: flex;
   flex-flow: row wrap;
@@ -21,6 +22,20 @@
 .f,
 .g {
   flex-basis: 32%;
+} */
+
+/* Part 2 */
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+.a,
+.h {
+  grid-column: span 2;
+}
+.c {
+  grid-column: span 3;
 }
 
 /* HINT: Three types of Grid syntax might include:
