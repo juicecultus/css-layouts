@@ -1,0 +1,119 @@
+/* Force table to not be like tables anymore */
+table,
+thead,
+tbody,
+th,
+td,
+tr {
+  display: block;
+}
+
+/* Hide table headers (but not display: none;, for accessibility) */
+thead tr {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+td {
+  border: none;
+}
+
+td::before {
+  /* Top/left values mimic padding */
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+/* Label the data */
+td:nth-of-type(1)::before {
+  content: 'Description: ';
+}
+td:nth-of-type(2)::before {
+  content: 'Weight: ';
+}
+td:nth-of-type(3)::before {
+  content: 'Measure: ';
+}
+td:nth-of-type(4)::before {
+  content: 'Vitamin C: ';
+}
+td:nth-of-type(5)::before {
+  content: 'Vitamin K: ';
+}
+
+td:nth-of-type(2)::after {
+  content: ' g';
+}
+td:nth-of-type(4)::after {
+  content: ' mg/measure';
+}
+td:nth-of-type(5)::after {
+  content: '  \B5g/measure';
+}
+
+/* let the table scroll as a backup */
+.tablescroll {
+  overflow-x: auto;
+}
+/* basic CSS styles */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+caption {
+  font-size: 1.5rem;
+  text-align: left;
+  font-weight: bold;
+  margin: 1rem auto;
+  width: 100%;
+  padding-left: 1rem;
+}
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th {
+  text-align: left;
+  background-color: #ccc;
+}
+th,
+td {
+  padding: 1rem;
+  /* border-right: 1px solid black; */
+}
+tr:not(:last-child),
+thead {
+  border-bottom: 1px solid black;
+}
+tr:nth-child(odd) {
+  background-color: #eee;
+}
+p:last-of-type {
+  margin: 1rem 0;
+  font-size: smaller;
+}
+
+@media (min-width: 600px) {
+  td:nth-of-type(n)::before,
+  td:nth-of-type(n)::after {
+    content: '';
+  }
+  thead tr {
+    position: static;
+  }
+  thead,
+  tbody {
+    display: table-row-group;
+  }
+  th,
+  td {
+    display: table-cell;
+  }
+  tr {
+    display: table-row;
+  }
+  table {
+    display: table;
+  }
+}
