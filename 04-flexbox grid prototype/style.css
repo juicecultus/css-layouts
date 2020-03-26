@@ -9,7 +9,7 @@
 [class*='col-'] {
   --width: 4;
   --initialbasis: calc(var(--width, 0) / var(--columns, 4) * 100%);
-  --gap: calc((var(--columns) - var(--width)) * 1%);
+  --gap: calc((var(--columns, 16) - var(--width, 0)) * 1%);
   flex-basis: calc(var(--initialbasis) - var(--gap));
 }
 
